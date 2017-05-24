@@ -1,0 +1,27 @@
+.row
+    h2 Welcome back #{@user.name}
+.row
+    h3 While you're applying let us do the typing!
+
+= form_for @user do |f|
+    .row.form-group
+        = f.label      :name
+        = f.text_field :name, :class => "form-control"
+    .row.form-group
+        = f.label      :address
+        = f.text_field :address, :class => "form-control"
+    .row.form-group
+        = f.label      :email
+        = f.text_field  :email, :class => "form-control"
+    = f.fields_for :educations do |ff|
+      .row.form-group
+        = ff.label :name
+        = ff.text_field :name, :class => "form-control"
+
+        = ff.label :level
+        = ff.text_field :level, :class => "form-control"
+
+        = ff.label :year
+        = ff.text_field :year, :class => "form-control"
+
+    = f.submit

@@ -1,5 +1,6 @@
 .idea
 .DStore
+.DS_Store
 
 *.rbc
 capybara-*.html
