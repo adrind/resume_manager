@@ -1,8 +1,10 @@
 FactoryGirl.define do
   factory :education do
-    name "MyText"
+    name "My school"
     id ""
-    year 1
-    type "MyText"
+    year 2013
+    level "College"
+
+    association :user
   end
 end
