@@ -7,6 +7,7 @@ class UserBuilder
     @user.provider = response['provider']
     @user.uid = response['uid']
     @user.name = response['info']['name']
+    @user.email = response['info']['email']
 
     extra_data = response['extra']
 

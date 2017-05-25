@@ -6,7 +6,8 @@ module Omniauth
         'provider' => 'facebook',
         'uid' => '123545',
         'info' => {
-          'name' => 'Adrienne'
+          'name' => 'Adrienne',
+          'email' => 'adrienne@adrienne.com'
         },
         'extra' => {
             'raw_info' => {
