@@ -2,10 +2,10 @@ module Omniauth
 
   module Mock
     def auth_mock
-      OmniAuth.config.mock_auth[:twitter] = {
-        'provider' => 'twitter',
+      OmniAuth.config.mock_auth[:facebook] = {
+        'provider' => 'facebook',
         'uid' => '123545',
-        'user_info' => {
+        'info' => {
           'name' => 'mockuser'
         },
         'credentials' => {
@@ -19,9 +19,9 @@ module Omniauth
   module SessionHelpers
     def signin
       visit root_path
-      expect(page).to have_content("Sign in")
+      expect(page).to have_content("Sign in plz")
       auth_mock
-      click_link "Sign in"
+      click_link "Here"
     end
   end
 

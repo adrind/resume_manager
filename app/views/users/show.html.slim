@@ -24,4 +24,14 @@
         = ff.label :year
         = ff.text_field :year, :class => "form-control"
 
+    = f.fields_for :jobs do |j|
+      .row.form-group
+        = j.label :employer
+        = j.text_field :employer, :class => "form-control"
+
+        = j.label :position
+        = j.text_field :position, :class => "form-control"
+
+        = j.label :start_date
+        = j.text_field :start_date, :class => "form-control"
     = f.submit

@@ -11,7 +11,7 @@ feature 'Sign in', :omniauth do
   #   Then I see a success message
   scenario "user can sign in with valid account" do
     signin
-    expect(page).to have_content("Sign out")
+    expect(page).to have_content("Welcome Users: 1 registered")
   end
 
   # Scenario: User cannot sign in with invalid account
@@ -22,8 +22,8 @@ feature 'Sign in', :omniauth do
   scenario 'user cannot sign in with invalid account' do
     OmniAuth.config.mock_auth[:facebook] = :invalid_credentials
     visit root_path
-    expect(page).to have_content("Sign in")
-    click_link "Sign in"
+    expect(page).to have_content("Sign in plz")
+    click_link "Here"
     expect(page).to have_content('Authentication error')
   end
 
