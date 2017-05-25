@@ -26,7 +26,9 @@ class UserBuilder
   end
 
   def add_education(education)
-    @user.educations.build(name: education['school']['name'], level: education['type'], year: education['year']['name'], user: @user)
+    year = education['year'] || {}
+    school = education['school'] || {}
+    @user.educations.build(name: school['name'], level: education['type'], year: year['name'], user: @user)
   end
 
   def add_job(job)

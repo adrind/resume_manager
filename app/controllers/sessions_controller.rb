@@ -10,7 +10,8 @@ class SessionsController < ApplicationController
                       :uid => auth['uid'].to_s).first || User.create_with_omniauth(auth)
     reset_session
     session[:user_id] = user.id
-    redirect_to root_url, :notice => 'Signed in!'
+    cookies[:user_id] = user.id
+    redirect_to user, :notice => 'Signed in!'
   end
 
   def destroy
