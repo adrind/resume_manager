@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
-  before_action :correct_user?, :except => [:index]
+  before_action :authenticate_user!, :except => [:json]
+  before_action :correct_user?, :except => [:index, :json]
 
   def index
     @users = User.all
@@ -17,6 +17,11 @@ class UsersController < ApplicationController
     else
       render 'show'
     end
+  end
+
+  def json
+    @user = User.find(params[:id])
+    json_response @user.to_json(:include => [:jobs, :educations])
   end
 
   private

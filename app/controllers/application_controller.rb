@@ -7,6 +7,9 @@ class ApplicationController < ActionController::Base
   helper_method :user_signed_in?
   helper_method :correct_user?
 
+  include Response
+  include ExceptionHandler
+
   private
     def current_user
       begin
