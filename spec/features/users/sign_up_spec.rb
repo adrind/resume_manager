@@ -15,6 +15,7 @@ feature 'Sign up', :omniauth do
     click_link 'Adrienne'
     page.has_selector?('form')
     expect(form_field('name')).to match 'Adrienne'
+    expect(form_field('email')).to match 'adrienne@adrienne.com'
 
     expect(form_ed_field('name')).to match 'Ivy Puppiez'
     expect(form_ed_field('level')).to match 'Puppy academy'
