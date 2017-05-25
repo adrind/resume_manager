@@ -16,6 +16,6 @@ class UserBuilder
   end
 
   def add_education(education)
-    Education.new(name: education['school']['name'], level: education['type'], year: education['year']['name'], user: @user)
+    Education.create(name: education['school']['name'], level: education['type'], year: education['year']['name'], user: @user)
   end
 end
